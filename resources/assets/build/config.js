@@ -12,6 +12,7 @@ const rootPath = (userConfig.paths && userConfig.paths.root)
   : process.cwd();
 
 const config = merge({
+  "headers": { "Access-Control-Allow-Origin": "*" },
   open: true,
   copy: 'images/**/*',
   proxyUrl: 'http://localhost:3000',

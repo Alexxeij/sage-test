@@ -4,11 +4,33 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
+use MathPHP\Algebra;
+
+use MathPHP\Arithmetic;
+
 class App extends Controller
 {
     public function siteName()
     {
         return get_bloginfo('name');
+    }
+
+    public static function getNumber(){
+
+        // Greatest common divisor (GCD)
+        $gcd = Algebra::gcd(8, 12);
+
+        return $gcd;
+    }
+
+    public static function getNumberArithmetic(){
+
+        // Copy sign
+        $magnitude = 5;
+        $sign      = -3;
+        $signed_magnitude = Arithmetic::copySign($magnitude, $sign); // -5
+
+        return $signed_magnitude;
     }
 
     public static function title()
